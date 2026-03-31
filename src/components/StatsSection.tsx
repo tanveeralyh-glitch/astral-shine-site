@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Homes Cleaned" },
-  { value: 100, suffix: "+", label: "Offices Cleaned" },
-  { value: 5, suffix: "★", label: "Star Reviews" },
+  { value: 500, suffix: "+", label: "Project Done" },
+  { value: 800, suffix: "+", label: "Happy Clients" },
+  { value: 18, suffix: "+", label: "Award Winner" },
+  { value: 600, suffix: "+", label: "Team Member" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -35,7 +36,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 
   return (
     <div ref={ref} className="text-center">
-      <p className="font-display text-4xl sm:text-5xl font-bold text-gradient">
+      <p className="font-display text-4xl sm:text-5xl font-extrabold text-primary-foreground">
         {count}{suffix}
       </p>
     </div>
@@ -43,20 +44,20 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 };
 
 const StatsSection = () => (
-  <section className="py-20 px-6">
+  <section className="py-16 px-6">
     <div className="container mx-auto">
-      <div className="glass-card rounded-3xl p-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div className="bg-primary rounded-3xl p-10 sm:p-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
+            transition={{ delay: i * 0.1 }}
             className="text-center"
           >
             <Counter target={s.value} suffix={s.suffix} />
-            <p className="text-muted-foreground text-sm mt-2">{s.label}</p>
+            <p className="text-primary-foreground/70 text-sm mt-2">{s.label}</p>
           </motion.div>
         ))}
       </div>
