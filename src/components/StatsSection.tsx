@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: 500, suffix: "+", label: "Homes Cleaned" },
+  { value: 100, suffix: "+", label: "Offices Cleaned" },
   { value: 5, suffix: "★", label: "Star Reviews" },
-  { value: 3, suffix: "+", label: "Years Experience" },
-  { value: 100, suffix: "%", label: "Satisfaction" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -46,7 +45,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 const StatsSection = () => (
   <section className="py-20 px-6">
     <div className="container mx-auto">
-      <div className="glass-card rounded-3xl p-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="glass-card rounded-3xl p-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
