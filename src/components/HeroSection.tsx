@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Particles from "./Particles";
+import { Phone } from "lucide-react";
 
-const phrases = ["Transform Spaces", "Elevate Standards", "Redefine Clean"];
+const phrases = ["Spotless Homes", "Fresh Offices", "Clean Spaces"];
 
 const HeroSection = () => {
   const [phraseIdx, setPhraseIdx] = useState(0);
@@ -33,7 +34,6 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       <Particles />
-      {/* Glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse_glow" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-[100px] animate-pulse_glow" />
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
           transition={{ delay: 0.4 }}
           className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          We Don't Clean — We{" "}
+          Professional Cleaning Services —{" "}
           <span className="text-gradient">
             {text}
             <span className="animate-pulse">|</span>
@@ -64,7 +64,7 @@ const HeroSection = () => {
           transition={{ delay: 0.6 }}
           className="text-muted-foreground text-lg max-w-xl mx-auto mb-10"
         >
-          Premium cleaning services that turn ordinary spaces into extraordinary experiences.
+          We make your home and office spotless and fresh. Trusted by hundreds of customers across Sydney.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,10 +73,12 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button variant="glow" size="lg" className="text-base px-8" asChild>
-            <a href="#book">Book Now</a>
+            <a href="tel:+61415883582">
+              <Phone className="w-4 h-4 mr-2" /> Call Now
+            </a>
           </Button>
           <Button variant="outline" size="lg" className="text-base px-8 border-primary/30 hover:border-primary/60" asChild>
-            <a href="#book">Get Free Quote</a>
+            <a href="#contact">Get a Quote</a>
           </Button>
         </motion.div>
       </div>

@@ -2,10 +2,11 @@ import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-import BeforeAfterSection from "@/components/BeforeAfterSection";
+import GallerySection from "@/components/GallerySection";
+import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import BookingSection from "@/components/BookingSection";
+import ContactSection from "@/components/ContactSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
 
@@ -15,10 +16,11 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <ServicesSection />
-    <BeforeAfterSection />
+    <GallerySection />
+    <AboutSection />
     <StatsSection />
     <TestimonialsSection />
-    <BookingSection />
+    <ContactSection />
     <Footer />
     <WhatsAppButton />
   </>
