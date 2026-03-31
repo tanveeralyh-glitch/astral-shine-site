@@ -23,8 +23,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#" className="font-display text-xl font-bold text-gradient">
-          Master's Touch
+        <a href="#" className="flex items-center gap-2">
+          <img src={logo} alt="Master's Touch Logo" className="h-10 w-auto" />
+          <span className="font-display text-xl font-bold text-gradient">Master's Touch</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
