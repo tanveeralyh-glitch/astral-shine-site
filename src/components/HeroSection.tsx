@@ -6,10 +6,17 @@ import { Phone } from "lucide-react";
 
 const phrases = ["Spotless Homes", "Fresh Offices", "Clean Spaces"];
 
+const heroImages = [
+  "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80",
+];
+
 const HeroSection = () => {
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
+  const [bgIdx, setBgIdx] = useState(0);
 
   useEffect(() => {
     const target = phrases[phraseIdx];
@@ -31,8 +38,25 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [text, deleting, phraseIdx]);
 
+  useEffect(() => {
+    const timer = setInterval(() => setBgIdx((i) => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Rotating background images */}
+      {heroImages.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === bgIdx ? 1 : 0 }}
+        >
+          <img src={src} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/70 dark:bg-background/80" />
+        </div>
+      ))}
+
       <Particles />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse_glow" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-[100px] animate-pulse_glow" />

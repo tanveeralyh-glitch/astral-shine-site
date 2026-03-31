@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 import logo from "@/assets/logo.jpg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -46,24 +48,41 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <a
-          href="#contact"
-          className="hidden md:inline-flex bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium glow-purple hover:brightness-110 transition-all"
-        >
-          Get a Quote
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggle}
+            className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun className="w-4 h-4 text-accent" /> : <Moon className="w-4 h-4 text-primary" />}
+          </button>
+          <a
+            href="#contact"
+            className="inline-flex bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium glow-purple hover:brightness-110 transition-all"
+          >
+            Get a Quote
+          </a>
+        </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggle}
+            className="p-2 rounded-lg bg-secondary"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun className="w-5 h-5 text-accent" /> : <Moon className="w-5 h-5 text-primary" />}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
