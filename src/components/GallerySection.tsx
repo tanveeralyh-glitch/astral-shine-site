@@ -7,6 +7,9 @@ const images = [
   { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80", alt: "Polished floor" },
   { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80", alt: "Living room" },
   { src: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80", alt: "Clean bedroom" },
+  { src: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&q=80", alt: "Vacuum cleaning" },
+  { src: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80", alt: "Mopping floor" },
+  { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", alt: "Modern home interior" },
 ];
 
 const GallerySection = () => (
@@ -22,7 +25,7 @@ const GallerySection = () => (
         <h2 className="font-display text-3xl sm:text-5xl font-bold">Gallery</h2>
       </motion.div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {images.map((img, i) => (
           <motion.div
             key={i}
