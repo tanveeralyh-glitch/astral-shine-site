@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80", alt: "Clean kitchen" },
-  { src: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80", alt: "Sparkling bathroom" },
-  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80", alt: "Office space" },
-  { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80", alt: "Polished floor" },
-  { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80", alt: "Living room" },
-  { src: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80", alt: "Clean bedroom" },
-  { src: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&q=80", alt: "Vacuum cleaning" },
-  { src: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80", alt: "Mopping floor" },
-  { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", alt: "Modern home interior" },
+  { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80", label: "Kitchen Cleaning" },
+  { src: "https://images.unsplash.com/photo-1527515637462-cff94eebd21f?w=600&q=80", label: "Office Spaces" },
+  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80", label: "Floor Polishing" },
+  { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80", label: "Bathroom Deep Clean" },
+  { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", label: "Residential Homes" },
+  { src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80", label: "Professional Team" },
 ];
 
 const GallerySection = () => (
-  <section id="gallery" className="py-24 px-6">
+  <section id="gallery" className="py-24 px-6 bg-secondary/30">
     <div className="container mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -21,28 +18,29 @@ const GallerySection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-primary tracking-widest uppercase text-sm mb-3">Our Work</p>
-        <h2 className="font-display text-3xl sm:text-5xl font-bold">Gallery</h2>
+        <p className="text-primary tracking-widest uppercase text-sm mb-3 font-semibold">Our Work</p>
+        <h2 className="font-display text-3xl sm:text-5xl font-extrabold">Keep your vision to our latest<br />projects.</h2>
+        <p className="text-muted-foreground mt-4 max-w-lg mx-auto">Browse through our recent cleaning projects showcasing quality results.</p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {images.map((img, i) => (
           <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.9 }}
+            key={img.label}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl aspect-square glass-card"
+            transition={{ delay: i * 0.08 }}
+            className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
           >
             <img
               src={img.src}
-              alt={img.alt}
-              loading="lazy"
+              alt={img.label}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <p className="text-foreground font-display font-semibold">{img.alt}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <p className="text-primary-foreground font-display font-bold text-sm">{img.label}</p>
             </div>
           </motion.div>
         ))}
