@@ -5,10 +5,12 @@ import ServicesSection from "@/components/ServicesSection";
 import GallerySection from "@/components/GallerySection";
 import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
+import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => (
   <>
@@ -19,8 +21,10 @@ const Index = () => (
     <GallerySection />
     <AboutSection />
     <StatsSection />
+    <TeamSection />
     <TestimonialsSection />
     <ContactSection />
+    <NewsletterSection />
     <Footer />
     <WhatsAppButton />
   </>
