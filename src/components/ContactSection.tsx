@@ -51,6 +51,12 @@ const ContactSection = () => {
                 </div>
                 <span>+61 415 883 582</span>
               </a>
+              <a href="tel:+61 461 431 34" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-primary" />
+                </div>
+                <span>+61 461 431 34</span>
+              </a>
               <a href="mailto:Themasterstouchservices112@gmail.com" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-primary" />

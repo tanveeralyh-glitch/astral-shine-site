@@ -33,9 +33,13 @@ const Footer = () => (
             <a href="tel:+61415883582" className="flex items-center gap-2 hover:text-background transition-colors">
               <Phone className="w-4 h-4" /> +61 415 883 582
             </a>
+             <a href="tel:+61 461 431 34" className="flex items-center gap-2 hover:text-background transition-colors">
+              <Phone className="w-4 h-4" /> 61 461 431 34
+            </a>
             <a href="mailto:Themasterstouchservices112@gmail.com" className="flex items-center gap-2 hover:text-background transition-colors break-all">
               <Mail className="w-4 h-4" /> Themasterstouchservices112@gmail.com
             </a>
+            
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>Hebe St, Greenacre NSW 2190, Australia</span>
