@@ -1,45 +1,51 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground text-background py-14 px-6">
     <div className="container mx-auto">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+        <div className="lg:col-span-2">
           <p className="font-display font-extrabold text-lg mb-3">The Master's Touch Cleaning</p>
-          <p className="text-background/60 text-sm leading-relaxed">Professional cleaning services across Sydney. Trusted by hundreds of happy customers.</p>
+          <p className="text-background/60 text-sm leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</p>
+          <div className="flex gap-3">
+            {[Facebook, Twitter, Instagram].map((Icon, i) => (
+              <a key={i} href="#" className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </div>
         <div>
           <p className="font-display font-bold mb-3">Company</p>
           <ul className="space-y-2 text-background/60 text-sm">
             <li><a href="#about" className="hover:text-background transition-colors">About Us</a></li>
             <li><a href="#services" className="hover:text-background transition-colors">Services</a></li>
-            <li><a href="#gallery" className="hover:text-background transition-colors">Gallery</a></li>
+            <li><a href="#gallery" className="hover:text-background transition-colors">Community</a></li>
             <li><a href="#reviews" className="hover:text-background transition-colors">Testimonials</a></li>
           </ul>
         </div>
         <div>
           <p className="font-display font-bold mb-3">Support</p>
           <ul className="space-y-2 text-background/60 text-sm">
-            <li><a href="#contact" className="hover:text-background transition-colors">Contact Us</a></li>
-            <li><a href="tel:+61415883582" className="hover:text-background transition-colors">Call Support</a></li>
+            <li><a href="#contact" className="hover:text-background transition-colors">Help Center</a></li>
+            <li><a href="#" className="hover:text-background transition-colors">Tweet @ Us</a></li>
+            <li><a href="#" className="hover:text-background transition-colors">Webinars</a></li>
+            <li><a href="#" className="hover:text-background transition-colors">Feedback</a></li>
           </ul>
         </div>
         <div>
           <p className="font-display font-bold mb-3">Contact Us</p>
           <div className="space-y-3 text-background/60 text-sm">
-            <a href="tel:+61452419789" className="flex items-center gap-2 hover:text-background transition-colors">
-              <Phone className="w-4 h-4" /> +61 452 419 789
-            </a>
             <a href="tel:+61415883582" className="flex items-center gap-2 hover:text-background transition-colors">
               <Phone className="w-4 h-4" /> +61 415 883 582
             </a>
-             <a href="tel:+61 461 431 34" className="flex items-center gap-2 hover:text-background transition-colors">
-              <Phone className="w-4 h-4" /> 61 461 431 34
+            <a href="tel:+6146143134" className="flex items-center gap-2 hover:text-background transition-colors">
+              <Phone className="w-4 h-4" /> +61 461 431 34
             </a>
             <a href="mailto:Themasterstouchservices112@gmail.com" className="flex items-center gap-2 hover:text-background transition-colors break-all">
-              <Mail className="w-4 h-4" /> Themasterstouchservices112@gmail.com
+              <Mail className="w-4 h-4" /> support@mail.com
             </a>
-            
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>Hebe St, Greenacre NSW 2190, Australia</span>
@@ -47,8 +53,13 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="border-t border-background/10 pt-6 text-center">
+      <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-background/50 text-sm">© {new Date().getFullYear()} The Master's Touch Cleaning. All rights reserved.</p>
+        <div className="flex gap-6 text-background/50 text-sm">
+          <a href="#" className="hover:text-background transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-background transition-colors">Terms of Use</a>
+          <a href="#" className="hover:text-background transition-colors">Legal</a>
+        </div>
       </div>
     </div>
   </footer>

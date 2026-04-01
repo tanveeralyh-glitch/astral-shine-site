@@ -5,6 +5,10 @@ const images = [
   { src: "/work2.jpg", label: "Stove & Oven Cleaning" },
   { src: "/work3.jpg", label: "Cabinet Deep Clean" },
   { src: "/work4.jpg", label: "Carpet Cleaning" },
+  { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80", label: "Kitchen Cleaning" },
+  { src: "https://images.unsplash.com/photo-1527515637462-cff94eebd21f?w=600&q=80", label: "Office Spaces" },
+  { src: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80", label: "Floor Polishing" },
+  { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80", label: "Bathroom Deep Clean" },
 ];
 
 const GallerySection = () => (
@@ -21,23 +25,23 @@ const GallerySection = () => (
         <p className="text-muted-foreground mt-4 max-w-lg mx-auto">Browse through our recent cleaning projects showcasing quality results.</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {images.map((img, i) => (
           <motion.div
             key={img.label}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="group relative overflow-hidden rounded-2xl shadow border border-border bg-background"
+            transition={{ delay: i * 0.06 }}
+            className="group relative overflow-hidden rounded-2xl aspect-square shadow border border-border bg-background"
           >
             <img
               src={img.src}
               alt={img.label}
-              className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <p className="text-primary-foreground font-display font-bold text-sm">{img.label}</p>
             </div>
           </motion.div>

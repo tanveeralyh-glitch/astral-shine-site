@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Phone, ShieldCheck, Clock, Sparkles, ThumbsUp } from "lucide-react";
+import { Phone, ShieldCheck, Clock, Sparkles, ThumbsUp, Truck } from "lucide-react";
 
 const features = [
-  { icon: ShieldCheck, title: "Best Price", desc: "Affordable & transparent" },
-  { icon: Clock, title: "Always Available", desc: "7 days a week" },
-  { icon: ThumbsUp, title: "Customer's Protection", desc: "100% satisfaction" },
-  { icon: Sparkles, title: "Premium Quality", desc: "Attention to detail" },
+  { icon: ShieldCheck, title: "Best Price", desc: "Cheap & best price" },
+  { icon: Truck, title: "Free Delivery", desc: "Cheap & best price" },
+  { icon: ThumbsUp, title: "Customer's Protection", desc: "Cheap & best price" },
+  { icon: Clock, title: "Live Support", desc: "Cheap & best price" },
 ];
 
 const HeroSection = () => (
@@ -24,7 +24,7 @@ const HeroSection = () => (
           transition={{ delay: 0.1 }}
           className="text-primary font-semibold tracking-wider uppercase text-sm mb-4"
         >
-          Master's Touch Cleaning
+          Learn From Today
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,8 @@ const HeroSection = () => (
           transition={{ delay: 0.4 }}
           className="text-muted-foreground text-lg leading-relaxed mb-8"
         >
-          We provide professional and reliable cleaning services to keep your home and workplace spotless. Trusted by hundreds of customers across Sydney.
+          Awesome site on the top advertising a Courses available business online includes assembling having awesome
+          site on the top advertising. Courses available business having.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,11 +52,11 @@ const HeroSection = () => (
         >
           <Button variant="glow" size="lg" className="text-base px-8 rounded-full" asChild>
             <a href="tel:+61415883582">
-              <Phone className="w-4 h-4 mr-2" /> Call Now
+              <Phone className="w-4 h-4 mr-2" /> About Us
             </a>
           </Button>
           <Button variant="outline" size="lg" className="text-base px-8 rounded-full border-primary/30 hover:border-primary hover:bg-primary/5" asChild>
-            <a href="#contact">Get a Quote</a>
+            <a href="#services">Book a Service</a>
           </Button>
         </motion.div>
       </div>
