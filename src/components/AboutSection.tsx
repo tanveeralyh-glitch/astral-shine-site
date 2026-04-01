@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const bullets = [
   "Residential Cleaning Services Near You!",
@@ -57,10 +58,14 @@ const AboutSection = () => (
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold mb-6">
-            We Make Spaces Look <span className="text-gradient">Great</span>
+            We Make Clots Look <span className="text-gradient">Great</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            We provide professional and reliable cleaning services to keep your home and workplace clean and hygienic. Our team ensures high-quality results with attention to detail.
+          <p className="text-muted-foreground text-base leading-relaxed mb-4">
+            Training programs can bring you a super exciting experience of learning through online.
+            You never face any negative experience while enjoying your classes. Awesome site on the top advertising a Courses available business having.
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. More vulputate ad litore tempori.
           </p>
           <ul className="space-y-3 mb-8">
             {bullets.map((b) => (
@@ -70,7 +75,10 @@ const AboutSection = () => (
               </li>
             ))}
           </ul>
-          <div className="flex flex-wrap gap-6">
+          <Button variant="glow" size="lg" className="rounded-full px-8" asChild>
+            <a href="#contact">Learn More</a>
+          </Button>
+          <div className="flex flex-wrap gap-6 mt-6">
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" />
               <span className="font-medium">Always Open</span>
